@@ -23,7 +23,7 @@
     }
 
     Account.prototype.printStatement = function() {
-      return this.statementView.returnHTML()
+      document.getElementById('statement').innerHTML = this.statementView.returnHTML()
     }
 
   exports.Account = Account;
