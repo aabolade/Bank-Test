@@ -7,6 +7,7 @@
 
     Account.prototype.deposit = function(amount) {
       this.balance+= amount;
+      statement.createDeposit()
       return "You have successfully deposited 10 into your account";
     }
 

@@ -5,7 +5,7 @@
 
   beforeEach(function() {
     account = new Account()
-    statement = jasmine.createSpyObj('statement', ['createWithdrawal'])
+    statement = jasmine.createSpyObj('statement', ['createWithdrawal', 'createDeposit'])
   })
 
   it("the balance should start at zero", function() {
@@ -40,6 +40,11 @@
         expect(account.balance).toEqual(1)
       })
 
+      it("creates a new withdrawal transaction", function() {
+        account.withdraw(10)
+        expect(statement.createWithdrawal).toHaveBeenCalled()
+      })
+
     })
 
   })
@@ -54,6 +59,11 @@
     it("making a deposit increases the account balance", function() {
       account.deposit(1000);
       expect(account.balance).toEqual(1000)
+    })
+
+    it("creates a new deposit transaction", function() {
+      account.deposit(100);
+      expect(statement.createDeposit).toHaveBeenCalled()
     })
   })
 
