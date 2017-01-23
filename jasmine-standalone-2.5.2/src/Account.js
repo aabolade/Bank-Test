@@ -3,7 +3,7 @@
   function Account() {
     this.balance = 0;
     this.statement = new Statement()
-    this.statementView = new StatementView()
+    this.statementView = new StatementView(this.statement)
   }
 
     Account.prototype.deposit = function(amount) {
