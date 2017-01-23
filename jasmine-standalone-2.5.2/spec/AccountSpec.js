@@ -5,15 +5,11 @@
 
   beforeEach(function() {
     account = new Account()
-    statement = jasmine.createSpyObj('statement', ['createWithdrawal', 'createDeposit'])
+    statement = jasmine.createSpyObj('statement', ['createTransaction'])
   })
 
   it("the balance should start at zero", function() {
     expect(account.balance).toEqual(0)
-  })
-
-  it("has a statement", function() {
-    expect(account.statement).toBeDefined()
   })
 
   it("the statement is an instance of the Statement object", function() {
@@ -46,7 +42,7 @@
 
       it("creates a new withdrawal transaction", function() {
         account.withdraw(10)
-        expect(statement.createWithdrawal).toHaveBeenCalled()
+        expect(statement.createTransaction).toHaveBeenCalled()
       })
 
     })
@@ -67,7 +63,7 @@
 
     it("creates a new deposit transaction", function() {
       account.deposit(100);
-      expect(statement.createDeposit).toHaveBeenCalled()
+      expect(statement.createTransaction).toHaveBeenCalled()
     })
   })
 

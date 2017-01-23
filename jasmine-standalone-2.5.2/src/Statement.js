@@ -4,12 +4,9 @@
     this.transactions = [];
   }
 
-  Statement.prototype.createWithdrawal = function(amount) {
-    this.transactions.push(amount)
-  }
-
-  Statement.prototype.createDeposit = function(amount) {
-    this.transactions.push(amount)
+  Statement.prototype.createTransaction = function(amount, type) {
+    transaction = new Transaction(amount,type)
+    this.transactions.push(transaction)
   }
 
   exports.Statement = Statement;
