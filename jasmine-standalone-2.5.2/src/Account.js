@@ -7,14 +7,14 @@
 
     Account.prototype.deposit = function(amount) {
       this.balance+= amount;
-      statement.createTransaction()
+      this.statement.createTransaction(amount, 'deposit')
       return "You have successfully deposited 10 into your account";
     }
 
     Account.prototype.withdraw = function(amount) {
       if (amount <= this.balance) {
         this.balance-= amount;
-        statement.createTransaction()
+        this.statement.createTransaction(amount, 'withdraw')
         return "withdrawal successful";
       } else {
         throw Error("You have insufficient funds");
