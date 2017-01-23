@@ -3,12 +3,13 @@
   function Account() {
     this.balance = 0;
     this.statement = new Statement()
+    this.statementView = new StatementView()
   }
 
     Account.prototype.deposit = function(amount) {
       this.balance+= amount;
       this.statement.createTransaction(amount, 'deposit')
-      return "You have successfully deposited 10 into your account";
+      return `You have successfully deposited ${amount} into your account`;
     }
 
     Account.prototype.withdraw = function(amount) {
@@ -22,6 +23,8 @@
     }
 
     Account.prototype.printStatement = function() {
+
+      this.statementView.returnHTML()
 
     }
 

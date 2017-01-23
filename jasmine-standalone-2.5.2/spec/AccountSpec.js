@@ -6,6 +6,7 @@
   beforeEach(function() {
     account = new Account()
     spyOn(account.statement, 'createTransaction')
+    spyOn(account.statementView, 'returnHTML')
   })
 
   it("the balance should start at zero", function() {
@@ -14,6 +15,10 @@
 
   it("the statement is an instance of the Statement object", function() {
     expect(account.statement.constructor.name).toEqual("Statement")
+  })
+
+  it("stores an instance of a Statement View", function() {
+    expect(account.statementView.constructor.name).toEqual("StatementView")
   })
 
   describe("making a withdrawal", function() {
@@ -54,6 +59,7 @@
 
     it("on success returns a message confirming the deposit", function() {
       expect(account.deposit(10)).toEqual("You have successfully deposited 10 into your account")
+      expect(account.deposit(100)).toEqual("You have successfully deposited 100 into your account")
     })
 
     it("making a deposit increases the account balance", function() {
@@ -69,7 +75,8 @@
 
   describe("printing a statement", function() {
     it("lists the latest transactions", function() {
-      expect(account.printStatement).toBeDefined()
+      account.printStatement()
+      expect(account.statementView.returnHTML).toHaveBeenCalled()
     })
   })
 

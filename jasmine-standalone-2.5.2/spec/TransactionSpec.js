@@ -12,6 +12,10 @@
       expect(transaction.amount).toEqual(amount)
     })
 
+    it("has a balance property", function() {
+      expect(transaction.balance).toBeDefined()
+    })
+
     it("has a date property", function(){
       expect(transaction.date.constructor.name).toEqual("Date")
     })
