@@ -12,9 +12,9 @@
     this.statement.transactions.forEach(function(element) {
 
       if(element.type === "deposit") {
-        contentHTML+= `<tr><td>${element.date}</td><td>${element.amount}</td><td></td><td>${element.balance}</td></tr>`
+        contentHTML+= `<tr><td>${element.formatDate()}</td><td>${element.amount}</td><td></td><td>${element.balance}</td></tr>`
       } else {
-        contentHTML+= `<tr><td>${element.date}</td><td></td><td>${element.amount}</td><td>${element.balance}</td></tr>`
+        contentHTML+= `<tr><td>${element.formatDate()}</td><td></td><td>${element.amount}</td><td>${element.balance}</td></tr>`
       }
     })
     return openTag += contentHTML + "</table>"

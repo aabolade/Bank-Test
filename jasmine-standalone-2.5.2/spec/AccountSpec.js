@@ -47,7 +47,7 @@
 
       it("creates a new withdrawal transaction", function() {
         account.withdraw(10)
-        expect(account.statement.createTransaction).toHaveBeenCalledWith(10, 'withdraw')
+        expect(account.statement.createTransaction).toHaveBeenCalledWith(10, 'withdraw',account.balance)
       })
 
     })
@@ -69,7 +69,7 @@
 
     it("creates a new deposit transaction", function() {
       account.deposit(100);
-      expect(account.statement.createTransaction).toHaveBeenCalledWith(100, 'deposit')
+      expect(account.statement.createTransaction).toHaveBeenCalledWith(100, 'deposit', account.balance)
     })
   })
 

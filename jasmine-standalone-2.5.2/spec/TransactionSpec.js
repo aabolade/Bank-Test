@@ -5,7 +5,8 @@
     beforeEach(function() {
       amount = 50;
       type = "deposit"
-      transaction = new Transaction(amount, type)
+      balance = 10
+      transaction = new Transaction(amount, type, balance)
     })
 
     it("has an amount property", function() {
@@ -13,7 +14,7 @@
     })
 
     it("has a balance property", function() {
-      expect(transaction.balance).toBeDefined()
+      expect(transaction.balance).toEqual(balance)
     })
 
     it("has a date property", function(){
