@@ -4,8 +4,8 @@
 
   beforeEach(function() {
     statement = new Statement()
-    withdrawal = jasmine.createSpyObj('withdrawal', ['amount', 'date'])
-    deposit = jasmine.createSpyObj('deposit', ['amount', 'date'])
+    withdrawal = jasmine.createSpyObj('withdrawal', ['amount', 'date', 'type'])
+    deposit = jasmine.createSpyObj('deposit', ['amount', 'date', 'type'])
   })
 
   it("stores an array of transactions", function() {

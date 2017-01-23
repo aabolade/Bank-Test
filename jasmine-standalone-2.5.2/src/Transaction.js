@@ -1,9 +1,9 @@
 (function(exports) {
 
-  function Transaction() {
-    this.amount = 10
-    this.date = "date"
-    this.type = "deposit"
+  function Transaction(amount, type) {
+    this.amount = amount;
+    this.date = new Date()
+    this.type = type;
   }
 
   exports.Transaction = Transaction;
