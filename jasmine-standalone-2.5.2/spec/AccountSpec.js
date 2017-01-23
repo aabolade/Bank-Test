@@ -16,6 +16,10 @@
     expect(account.statement).toBeDefined()
   })
 
+  it("the statement is an instance of the Statement object", function() {
+    expect(account.statement.constructor.name).toEqual("Statement")
+  })
+
   describe("making a withdrawal", function() {
 
     describe("with insufficent funds", function() {

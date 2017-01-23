@@ -2,7 +2,7 @@
 
   function Account() {
     this.balance = 0;
-    this.statement = "Log"
+    this.statement = new Statement()
   }
 
     Account.prototype.deposit = function(amount) {
