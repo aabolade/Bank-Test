@@ -1,8 +1,9 @@
 (function(exports) {
 
-  function Transaction(amount) {
-    this.amount = amount
+  function Transaction() {
+    this.amount = 10
     this.date = "date"
+    this.type = "deposit"
   }
 
   exports.Transaction = Transaction;
