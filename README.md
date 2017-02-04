@@ -1,5 +1,7 @@
 # Bank Test
 
+[![BuildStatus](https://travis-ci.org/aabolade/Bank-Test.svg?branch=master)](https://travis-ci.org/aabolade/Bank-Test)
+
 User Stories
 ============
 
@@ -64,9 +66,9 @@ Example
 
 Making a new account, depositing and withdrawing:
 
-![alt tag](./transactions1.png)
-
 ![alt tag](./transactions2.png)
+
+![alt tag](./transactions1.png)
 
 Prints a statement of all the transactions by date, type and amount. Then displays current balance:
 
