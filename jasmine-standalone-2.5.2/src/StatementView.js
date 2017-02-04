@@ -12,6 +12,7 @@
     this.statement.transactions.forEach(function(element) {
 
       if(element.type === "deposit") {
+        console.log(element)
         contentHTML+= `<tr><td>${element.formatDate()}</td><td>${element.amount}</td><td></td><td>${element.balance}</td></tr>`
       } else {
         contentHTML+= `<tr><td>${element.formatDate()}</td><td></td><td>${element.amount}</td><td>${element.balance}</td></tr>`

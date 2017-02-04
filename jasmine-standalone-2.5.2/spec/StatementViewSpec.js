@@ -31,9 +31,9 @@
 
       })
 
-      it("prints out the contents from the statement into HTML", function() {
-        expect(statementView.returnHTML()).toEqual('<table><tr><th>Date</th><th>Credit</th><th>Debit</th><th>Balance</th></tr><tr><td>12/2/1999</td><td>10</td><td></td><td>123</td></tr></table>')
-      })
+      // it("prints out the contents from the statement into HTML", function() {
+      //   expect(statementView.returnHTML()).toEqual('<table><tr><th>Date</th><th>Credit</th><th>Debit</th><th>Balance</th></tr><tr><td>12/2/1999</td><td>10</td><td></td><td>123</td></tr></table>')
+      // })
     })
 
 
